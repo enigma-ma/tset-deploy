@@ -1,6 +1,10 @@
 const express = require('express')
 const { exec } = require('child_process')
+const dotenv = require('dotenv')
 
+dotenv.config()
+
+const PORT = process.env.PORT || 4000
 
 const app = express()
 
@@ -33,6 +37,6 @@ app.get('/test' ,async (req , res) => {
 })
 
 
-app.listen(4000 , () => {
+app.listen(PORT , () => {
     console.log('server is runing ')
 })
