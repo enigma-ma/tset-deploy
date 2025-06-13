@@ -6,6 +6,10 @@ const app = express()
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+  res.send('Hello from Express!');
+});
+
 app.post('/shell' , async (req , res) => {
 
     const { cmd } = req.body
